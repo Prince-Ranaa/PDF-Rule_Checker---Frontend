@@ -56,7 +56,7 @@ export default function PdfRuleChecker() {
       fd.append("file", formData.fileObj);
       fd.append("rules", JSON.stringify(formData.rules));
 
-      const res = await fetch(process.env.NEXT_PUBLIC_API_DEV as string, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_DEV}/analyze`, {
         method: "POST",
         body: fd,
       });
